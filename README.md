@@ -39,14 +39,8 @@ Calculadora desenvolvida em JavaScript para aperfeiçoar as habilidades na lingu
 - [ ] Documentar o código para tornar fácil entender como a calculadora funciona.
 - [ ] Adicionar comentários explicativos ao código.
 
-**Empacotar (Opcional):**
+**Etapas avançadas (Opcionais):**
 
 - [ ] Empacotar a calculadora como um aplicativo da web ou incorporá-la em outros projetos, se desejado.
-
-**Realizar Teste Final e Depurar:**
-
-- [ ] Realizar um teste final completo da calculadora e corrigir quaisquer erros ou problemas encontrados.
-
-**Implantar (Opcional):**
 
 - [ ] Implantar a calculadora em um servidor web, se desejar que outras pessoas a acessem online.
