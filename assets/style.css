@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.calculator__keys{
+  /* Display grid para os botões*/
+  display: grid;
+}
