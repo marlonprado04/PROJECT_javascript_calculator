@@ -4,37 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
   <h1 class="title">Minha calculadora</h1>
 
   <!-- Calculator -->
-  <div class="calculator">
-    <div class="calculator__display">0</d>
+
+  <div class="calculator__container">
+
+    <div class="calculator__display">0</div>
+
     <div class="calculator__keys">
-      <button class="key__operator" data-action="sum">+</button>
-      <button class="key__operator" data-action="subtract">-</button>
-      <button class="key__operator" data-action="multiply">&times</button>
-      <button class="key__operator" data-action="divide">÷</button>
 
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>0</button>
-
-      <button data-action="decimal">.</button>
-      <button data-action="clear">AC</button>
-      <button class="key__equal" data-action="calculate">=</button>
-      
+      <div class="calculator__button fun" id="key__c">C</div>
+      <div class="calculator__button fun">%</div>
+      <div class="calculator__button fun">+/-</div>
+      <div class="calculator__button fun">/</div>
+      <div class="calculator__button">7</div>
+      <div class="calculator__button">8</div>
+      <div class="calculator__button">9</div>
+      <div class="calculator__button fun">*</div>
+      <div class="calculator__button">4</div>
+      <div class="calculator__button">5</div>
+      <div class="calculator__button">6</div>
+      <div class="calculator__button fun">-</div>
+      <div class="calculator__button">1</div>
+      <div class="calculator__button">2</div>
+      <div class="calculator__button">3</div>
+      <div class="calculator__button fun">+</div>
+      <div class="calculator__button">.</div>
+      <div class="calculator__button">0</div>
+      <div class="calculator__button">**</div>
+      <div class="calculator__button fun">=</div>
     </div>
+
   </div>
 
   <!-- My script -->
