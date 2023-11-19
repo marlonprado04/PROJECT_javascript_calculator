@@ -4,34 +4,39 @@
 // 3. Zerar display e armazenar valor ao selecionar operação
 // 4. Executar operação ao clicar no igual
 
-// Armazenar os botões e display para poder modificar / dar sentido a eles
+// Armazenando os botões e display para poder modificar / dar sentido a eles
 const display = document.querySelector(".calculator__display");
 const numberKeys = document.querySelectorAll(".calculator__button.num");
 const functionKeys = document.querySelectorAll(".calculator__button.fun");
 let displayLog = 0;
 
-// Função zera adisplay
+// Função para zerar adisplay
 function resetDisplay() {
   display.textContent = "0";
 }
 
-function selectOperation(operation, value) {
-  switch (operation)
-}
-
-// Varre os botões
-numberKeys.forEach((key) => {
-  // Adiciona verificador de click para cada botão
+// Varrendo teclas de função
+functionKeys.forEach((key) => {
+  // Adicionando verificação de click para cada tecla
   key.addEventListener("click", () => {
-    // Verifica se display esá com valor 0
-    if (Number(display.textContent) === 0) {
-      // Se sim, passa valor do botão clicado
-      display.textContent = key.textContent;
-    } else {
-      // Se não, concatena o botão clicado ao lado
-      display.textContent += key.textContent;
+    // Se o id da tecla for "key__c", reseta o display
+    if (key.id == "key__c") {
+      resetDisplay();
     }
   });
 });
 
-functionKeys.forEach((key) => {});
+// Varrendo as teclas numéricas
+numberKeys.forEach((key) => {
+  // Adicionando verificador de click para cada botão numérico
+  key.addEventListener("click", () => {
+    // Verificando se display está com valor 0
+    if (Number(display.textContent) === 0) {
+      // Se sim, passando valor do botão clicado no momento
+      display.textContent = key.textContent;
+    } else {
+      // Se não, concatenando o valor do botão clicado ao lado do valor já existente
+      display.textContent += key.textContent;
+    }
+  });
+});
