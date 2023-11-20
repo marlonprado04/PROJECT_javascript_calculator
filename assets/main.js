@@ -9,6 +9,7 @@ const display = document.querySelector(".calculator__display");
 const numberKeys = document.querySelectorAll(".calculator__button.num");
 const functionKeys = document.querySelectorAll(".calculator__button.fun");
 let displayLog = 0;
+let operation = "null";
 
 // Função para zerar o display
 function resetDisplay() {
@@ -20,7 +21,8 @@ function resetDisplayLog() {
   displayLog = 0;
 }
 
-function realizeOperation(operation) {
+// Função para realizar a operação de acordo com tecla clicada
+function realizeOperation(operation, value1, value2) {
   switch (operation) {
     case "key__c":
       resetDisplay();
@@ -29,6 +31,9 @@ function realizeOperation(operation) {
     case "key__sum":
       if (displayLog === 0) {
         displayLog = parseInt(display.textContent);
+        console.log(this.operation);
+        console.log(operation);
+        this.operation = operation;
         resetDisplay();
       } else {
         displayLog += parseInt(display.textContent);
@@ -49,7 +54,7 @@ function realizeOperation(operation) {
   }
 }
 
-// Varrendo teclas de função
+// Varrendo teclas de função em busca de cliques
 functionKeys.forEach((key) => {
   // Adicionando verificação de click para cada tecla
   key.addEventListener("click", () => {
