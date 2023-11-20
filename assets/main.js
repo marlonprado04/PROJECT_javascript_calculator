@@ -11,6 +11,7 @@ const functionKeys = document.querySelectorAll(".calculator__button.fun");
 let displayLog = 0;
 let operation = "null";
 
+
 // Função para zerar o display
 function resetDisplay() {
   display.textContent = "0";
@@ -21,36 +22,34 @@ function resetDisplayLog() {
   displayLog = 0;
 }
 
-// Função para realizar a operação de acordo com tecla clicada
-function realizeOperation(clickedOperation) {
+function calculator(clickedOperation){
+  
+  // Switch para realizar operação de acordo com o clique
   switch (clickedOperation) {
+    // No caso de ser clicada o botão C, reseta valores
     case "key__c":
       resetDisplay();
       resetDisplayLog();
       break;
+    // No caso de clicar em "soma"
     case "key__sum":
-      if (displayLog === 0) {
-        displayLog = parseInt(display.textContent);
-        console.log(operation);
-        console.log(clickedOperation);
-        operation = clickedOperation;
-        resetDisplay();
-      } else {
-        displayLog += parseInt(display.textContent);
-        display.textContent = displayLog.toString();
-      }
-      console.log(displayLog);
+      if(number1 === 0){
+        number1 = number2;
+        console.log(number1)
+        console.log(displayLog)
+      }else if (number2 )
+      
       break;
-    case "key__subtraction":
-      if (displayLog === 0) {
-        displayLog = parseInt(display.textContent);
-        resetDisplay();
-      } else {
-        displayLog -= parseInt(display.textContent);
-        display.textContent = displayLog.toString();
-      }
-      console.log(displayLog);
+    case "key__equals":
+
       break;
+}
+
+
+// Função para realizar a operação de acordo com tecla clicada
+function realizeOperation(clickedOperation) {
+  // Switch para selecionar operação de acordo
+ 
   }
 }
 
@@ -59,7 +58,7 @@ functionKeys.forEach((key) => {
   // Adicionando verificação de click para cada tecla
   key.addEventListener("click", () => {
     // Chamando função de operação e passando como parâmetro o ID
-    realizeOperation(key.id);
+    calculator(key.id);
   });
 });
 
