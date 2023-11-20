@@ -22,8 +22,8 @@ function resetDisplayLog() {
 }
 
 // Função para realizar a operação de acordo com tecla clicada
-function realizeOperation(operation, value1, value2) {
-  switch (operation) {
+function realizeOperation(clickedOperation) {
+  switch (clickedOperation) {
     case "key__c":
       resetDisplay();
       resetDisplayLog();
@@ -31,9 +31,9 @@ function realizeOperation(operation, value1, value2) {
     case "key__sum":
       if (displayLog === 0) {
         displayLog = parseInt(display.textContent);
-        console.log(this.operation);
         console.log(operation);
-        this.operation = operation;
+        console.log(clickedOperation);
+        operation = clickedOperation;
         resetDisplay();
       } else {
         displayLog += parseInt(display.textContent);
