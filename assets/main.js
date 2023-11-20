@@ -10,19 +10,51 @@ const numberKeys = document.querySelectorAll(".calculator__button.num");
 const functionKeys = document.querySelectorAll(".calculator__button.fun");
 let displayLog = 0;
 
-// Função para zerar adisplay
+// Função para zerar o display
 function resetDisplay() {
   display.textContent = "0";
+}
+
+// Função para zerar o displayLog
+function resetDisplayLog() {
+  displayLog = 0;
+}
+
+function realizeOperation(operation) {
+  switch (operation) {
+    case "key__c":
+      resetDisplay();
+      resetDisplayLog();
+      break;
+    case "key__sum":
+      if (displayLog === 0) {
+        displayLog = parseInt(display.textContent);
+        resetDisplay();
+      } else {
+        displayLog += parseInt(display.textContent);
+        display.textContent = displayLog.toString();
+      }
+      console.log(displayLog);
+      break;
+    case "key__subtraction":
+      if (displayLog === 0) {
+        displayLog = parseInt(display.textContent);
+        resetDisplay();
+      } else {
+        displayLog -= parseInt(display.textContent);
+        display.textContent = displayLog.toString();
+      }
+      console.log(displayLog);
+      break;
+  }
 }
 
 // Varrendo teclas de função
 functionKeys.forEach((key) => {
   // Adicionando verificação de click para cada tecla
   key.addEventListener("click", () => {
-    // Se o id da tecla for "key__c", reseta o display
-    if (key.id == "key__c") {
-      resetDisplay();
-    }
+    // Chamando função de operação e passando como parâmetro o ID
+    realizeOperation(key.id);
   });
 });
 
