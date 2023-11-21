@@ -1,8 +1,3 @@
-// Etapas:
-// 1. Zerar display com botão C
-// 2. Zerar e adicionar números ao clicar neles
-// 3. Zerar display e armazenar valor ao selecionar operação
-// 4. Executar operação ao clicar no igual
 
 // Armazenando os botões e display para poder modificar / dar sentido a eles
 const display = document.querySelector(".calculator__display");
