@@ -36,6 +36,7 @@
   color: white;
   border: 1px solid #ccc;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
 }
 
 .calculator__button.fun{
