@@ -8,39 +8,22 @@ Calculadora desenvolvida em JavaScript para aperfeiçoar as habilidades na lingu
 
 **Estruturar o HTML e CSS:**
 
-- [ ] Criar a estrutura básica da calculadora no arquivo HTML, incluindo elementos como botões numéricos, operadores, tela de exibição, etc.
+- [x] Criar a estrutura básica da calculadora no arquivo HTML, incluindo elementos como botões numéricos, operadores, tela de exibição, etc.
 
-- [ ] Adicionar estilos CSS para tornar a calculadora visualmente atraente.
+- [x] Adicionar estilos CSS para tornar a calculadora visualmente atraente.
 
 **Lógica Inicial:**
 
-- [ ] Implementar a lógica para exibir números e operadores no visor da calculadora quando os botões são clicados.
+- [x] Implementar a lógica para exibir números e operadores no visor da calculadora quando os botões são clicados.
 
-- [ ] Adicionar a lógica para realizar operações de adição, subtração, multiplicação e divisão.
+- [x] Adicionar a lógica para realizar operações de adição, subtração, multiplicação e divisão.
 
-- [ ] Implementar a funcionalidade para limpar a tela da calculadora.
+- [x] Implementar a funcionalidade para limpar a tela da calculadora.
 
-- [ ] Implementar a funcionalidade para calcular o resultado quando o botão "igual" for pressionado.
+- [x] Implementar a funcionalidade para calcular o resultado quando o botão "igual" for pressionado.
 
 **Lógica Avançada:**
 
-- [ ] Adicionar funcionalidades avançadas, como operações de raiz quadrada, porcentagem, etc.
+- [x] Adicionar tratamento de erros para situações como divisão por zero ou entradas inválidas.
 
-- [ ] Adicionar tratamento de erros para situações como divisão por zero ou entradas inválidas.
-
-- [ ] Testar a calculadora com várias entradas para garantir seu funcionamento correto.
-
-- [ ] Revisar o código para torná-lo mais eficiente e limpo.
-
-- [ ] Adicionar recursos adicionais ou melhorar a usabilidade da calculadora, como suporte ao teclado.
-
-**Documentação:**
-
-- [ ] Documentar o código para tornar fácil entender como a calculadora funciona.
-- [ ] Adicionar comentários explicativos ao código.
-
-**Etapas avançadas (Opcionais):**
-
-- [ ] Empacotar a calculadora como um aplicativo da web ou incorporá-la em outros projetos, se desejado.
-
-- [ ] Implantar a calculadora em um servidor web, se desejar que outras pessoas a acessem online.
+- [x] Testar a calculadora com várias entradas para garantir seu funcionamento correto.
