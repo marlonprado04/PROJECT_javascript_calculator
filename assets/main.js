@@ -6,6 +6,7 @@ let displayLog = 0;
 let operation = null;
 let number1 = 0; // Variável para o primeiro número da operação
 let number2 = 0; // Variável para o segundo número da operação
+let history;
 
 // Função para zerar o display
 function resetDisplay() {
@@ -15,6 +16,21 @@ function resetDisplay() {
 // Função para zerar o displayLog
 function resetDisplayLog() {
   displayLog = 0;
+}
+
+// Função para adicionar histórico na tela
+function addHistory(n1, n2, operationSymbol) {
+  // Se não criada, cria uma div de histórico
+  if (!history) {
+    // Cria elemento de div dentro da variável history
+    history = document.createElement("div");
+    // Adiciona elemento criado no body
+    document.body.appendChild(history);
+    history.innerHTML +='<h3> Histórico: </h3>'
+  }
+
+  // Adiciona conteúdo à div sem substituir o conteúdo anterior
+  history.innerHTML += '<p>' + n1 + operationSymbol + n2 + " = " + '</p>';
 }
 
 // Função principal que será chamada quando uma tecla for clicada
@@ -80,16 +96,22 @@ function realizeOperation() {
       number2 = parseFloat(display.textContent);
       displayLog = number1 + number2;
       display.textContent = displayLog.toString();
+      console.log(number1 + " + " + number2 + " = " + displayLog);
+      addHistory(number1, number2, "+");
       break;
     case "key__subtract":
       number2 = parseFloat(display.textContent);
       displayLog = number1 - number2;
       display.textContent = displayLog.toString();
+      console.log(number1 + " - " + number2 + " = " + displayLog);
+      addHistory(number1, number2, "-");
       break;
     case "key__multiply":
       number2 = parseFloat(display.textContent);
       displayLog = number1 * number2;
       display.textContent = displayLog.toString();
+      console.log(number1 + " * " + number2 + " = " + displayLog);
+      addHistory(number1, number2, "*");
       break;
     case "key__divide":
       number2 = parseFloat(display.textContent);
@@ -100,11 +122,15 @@ function realizeOperation() {
         displayLog = "Error"; // Tratamento de divisão por zero
         display.textContent = displayLog.toString();
       }
+      console.log(number1 + " / " + number2 + " = " + displayLog);
+      addHistory(number1, number2, "/");
       break;
     case "key__potention":
       number2 = parseFloat(display.textContent);
       displayLog = number1 ** number2;
       display.textContent = displayLog.toString();
+      console.log(number1 + " ** " + number2 + " = " + displayLog);
+      addHistory(number1, number2, "**");
       break;
     default:
       break;
