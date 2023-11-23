@@ -19,7 +19,7 @@ function resetDisplayLog() {
 }
 
 // Função para adicionar histórico na tela
-function addHistory(n1, n2, operationSymbol) {
+function addHistory(n1, n2, operationSymbol, result) {
   // Se não criada, cria uma div de histórico
   if (!history) {
     // Cria elemento de div dentro da variável history
@@ -30,7 +30,7 @@ function addHistory(n1, n2, operationSymbol) {
   }
 
   // Adiciona conteúdo à div sem substituir o conteúdo anterior
-  history.innerHTML += '<p>' + n1 + operationSymbol + n2 + " = " + '</p>';
+  history.innerHTML += '<p>' + n1 + operationSymbol + n2 + " = " + result + '</p>';
 }
 
 // Função principal que será chamada quando uma tecla for clicada
@@ -97,21 +97,21 @@ function realizeOperation() {
       displayLog = number1 + number2;
       display.textContent = displayLog.toString();
       console.log(number1 + " + " + number2 + " = " + displayLog);
-      addHistory(number1, number2, "+");
+      addHistory(number1, number2, "+", displayLog);
       break;
     case "key__subtract":
       number2 = parseFloat(display.textContent);
       displayLog = number1 - number2;
       display.textContent = displayLog.toString();
       console.log(number1 + " - " + number2 + " = " + displayLog);
-      addHistory(number1, number2, "-");
+      addHistory(number1, number2, "-", displayLog);
       break;
     case "key__multiply":
       number2 = parseFloat(display.textContent);
       displayLog = number1 * number2;
       display.textContent = displayLog.toString();
       console.log(number1 + " * " + number2 + " = " + displayLog);
-      addHistory(number1, number2, "*");
+      addHistory(number1, number2, "*", displayLog);
       break;
     case "key__divide":
       number2 = parseFloat(display.textContent);
@@ -123,14 +123,14 @@ function realizeOperation() {
         display.textContent = displayLog.toString();
       }
       console.log(number1 + " / " + number2 + " = " + displayLog);
-      addHistory(number1, number2, "/");
+      addHistory(number1, number2, "/", displayLog);
       break;
     case "key__potention":
       number2 = parseFloat(display.textContent);
       displayLog = number1 ** number2;
       display.textContent = displayLog.toString();
       console.log(number1 + " ** " + number2 + " = " + displayLog);
-      addHistory(number1, number2, "**");
+      addHistory(number1, number2, "**", displayLog);
       break;
     default:
       break;
