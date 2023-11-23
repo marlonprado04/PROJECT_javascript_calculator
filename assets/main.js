@@ -1,4 +1,3 @@
-
 // Armazenando os botões e display para poder modificar / dar sentido a eles
 const display = document.querySelector(".calculator__display");
 const numberKeys = document.querySelectorAll(".calculator__button.num");
@@ -7,7 +6,6 @@ let displayLog = 0;
 let operation = null;
 let number1 = 0; // Variável para o primeiro número da operação
 let number2 = 0; // Variável para o segundo número da operação
-
 
 // Função para zerar o display
 function resetDisplay() {
@@ -32,16 +30,19 @@ function calculator(clickedKey) {
       break;
     case "key__plus_minus":
       if (Number(display.textContent) !== 0) {
-        display.textContent = (Number(display.textContent) * -1)
+        display.textContent = Number(display.textContent) * -1;
       }
       break;
     case "key__backspace":
-      if (Number(display.textContent) !== 0 & display.textContent.length > 1) {
+      if (
+        (Number(display.textContent) !== 0) &
+        (display.textContent.length > 1)
+      ) {
         display.textContent = display.textContent.slice(0, -1);
-        console.log("if backspace")
-      }else{
-        display.textContent = "0"
-        console.log("else backspace")
+        console.log("if backspace");
+      } else {
+        display.textContent = "0";
+        console.log("else backspace");
       }
       break;
     // No caso de ser qualquer uma das demais operações...
@@ -53,6 +54,8 @@ function calculator(clickedKey) {
       // Verifica se uma operação já está em andamento e realiza a operação pendente
       if (operation !== null) {
         realizeOperation();
+        operation = null; // Limpa a operação pendente após mostrar o resultado
+        break;
       }
       // Senão, armazena o valor digitado na variável 1
       number1 = parseFloat(display.textContent);
@@ -94,7 +97,7 @@ function realizeOperation() {
         displayLog = number1 / number2;
         display.textContent = displayLog.toString();
       } else {
-        displayLog = "Error";  // Tratamento de divisão por zero
+        displayLog = "Error"; // Tratamento de divisão por zero
         display.textContent = displayLog.toString();
       }
       break;
@@ -106,7 +109,6 @@ function realizeOperation() {
     default:
       break;
   }
-
 }
 // Varrendo teclas de função em busca de cliques
 functionKeys.forEach((key) => {
